@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image-gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="full-img" id="fullimgBox">
+    <img src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" id="fullimg">
+    <span onclick="closefullimg()">X</span>
+  </div>
+
+
+  <div class="img-gallery">
+    <img src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
+    <img src="https://images.unsplash.com/photo-1507643179773-3e975d7ac515?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
+     <img src="https://plus.unsplash.com/premium_photo-1706430433607-48f37bdd71b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
+      <img src="https://plus.unsplash.com/premium_photo-1706548911842-7162d4bd2c98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
+     <img src="https://images.unsplash.com/photo-1526865762123-f47ced7511bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
+    <img src="https://images.unsplash.com/photo-1488952619802-0a3f502bab33?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
+   <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
+    <img src="https://media.istockphoto.com/id/1854858577/photo/in-an-art-center-visitor-looks-at-the-artists-collection.webp?a=1&b=1&s=612x612&w=0&k=20&c=dgMu147ICHLUoxur_ARqM9YBIVaPbm_TtGkRZlhxbRU=" onclick="openfullimg(this.src)">
+  </div>
+
+  <script>
+    var fullimgBox = document.getElementById("fullimgBox");
+    var fullimg = document.getElementById("fullimg");
+
+    function openfullimg(pic){
+      fullimgBox.style.display="flex";
+      fullimg.src= pic;
+    }
+
+    function closefullimg(){
+       fullimgBox.style.display="none";
+    }
+
+  </script>
+
+</body>
+
+</html>                             
