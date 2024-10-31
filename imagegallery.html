@@ -1,46 +1,112 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image-gallery</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        .full-img {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .full-img img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .img-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .img-gallery img {
+            width: 150px; /* Set a specific width for the gallery images */
+            height: auto; /* Maintain aspect ratio */
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 8px; /* Optional: adds rounded corners */
+            transition: transform 0.2s; /* Optional: adds a hover effect */
+        }
+
+        .img-gallery img:hover {
+            transform: scale(1.05); /* Optional: scales up the image on hover */
+        }
+    </style>
 </head>
-
 <body>
+    <div class="full-img" id="fullImgBox">
+        <img src="" id="fullImg" alt="Full size image">
+        <span onclick="closeFullImg()" style="color: white; cursor: pointer; position: absolute; top: 10px; right: 20px;">X</span>
+    </div>
+
+    <div class="img-gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvo-rbce3ufndF9tL4PL9SBgjvkXsLGV__3Q&s" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWojy1XBIBruK0LfTO5YQNSLibcMJPhZuXutIFhc1_Fv9sahSJ5a2-nPzmsTNzw0oTrWI&usqp=CAU" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCQr8LsfETVa2C_lqdljdhRwYyXOl5mn_LMg&s" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbT_4AGEhcZu7bUIajRl0dNpFscXQVhC9abA&s" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcuxHZa3v-lXfJ7pht9asToYn0T2iaDZYC-Q&s" onclick="openFullImg(this.src)">
+        <img src="https://c4.wallpaperflare.com/wallpaper/163/291/742/wildlife-lion-cubs-cute-wallpaper-preview.jpg" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/45853/grey-crowned-crane-bird-crane-animal-45853.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl1f2kPORC2XzWCsJ5rPyRkuJdJVvMigIZIA&s" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0QJce7Y5aqHz8Se2WjlBnqClnluoKHZ9jCg&s" onclick="openFullImg(this.src)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6o868-Q84jeBGGrmSghXMGA8XMbdaovdtwg&s" onclick="openFullImg(this.src)">
+        <img src="https://t4.ftcdn.net/jpg/05/64/99/95/360_F_564999540_XdTvqLGDpneB3v4ifz0SZgzxMOFmfoVo.jpg" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1213447/pexels-photo-1213447.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/1042423/pexels-photo-1042423.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+        <img src="https://images.pexels.com/photos/122429/leaf-nature-green-spring-122429.jpeg?auto=compress&cs=tinysrgb&w=600" onclick="openFullImg(this.src)">
+    </div>
+
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openFullImg(src) {
+            fullImgBox.style.display = "flex";
+            fullImg.src = src;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+        }
+    </script>
+</body>
+</html>
 
 
-  <div class="full-img" id="fullimgBox">
-    <img src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" id="fullimg">
-    <span onclick="closefullimg()">X</span>
-  </div>
+  
 
-
-  <div class="img-gallery">
-    <img src="https://plus.unsplash.com/premium_photo-1706430433638-b9f3183a496e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
-    <img src="https://images.unsplash.com/photo-1507643179773-3e975d7ac515?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
-     <img src="https://plus.unsplash.com/premium_photo-1706430433607-48f37bdd71b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
-      <img src="https://plus.unsplash.com/premium_photo-1706548911842-7162d4bd2c98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
-     <img src="https://images.unsplash.com/photo-1526865762123-f47ced7511bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
-    <img src="https://images.unsplash.com/photo-1488952619802-0a3f502bab33?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdhbGxlcnl8ZW58MHx8MHx8fDA%3D" onclick="openfullimg(this.src)">
-   <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FsbGVyeXxlbnwwfHwwfHx8MA%3D%3D" onclick="openfullimg(this.src)">
-    <img src="https://media.istockphoto.com/id/1854858577/photo/in-an-art-center-visitor-looks-at-the-artists-collection.webp?a=1&b=1&s=612x612&w=0&k=20&c=dgMu147ICHLUoxur_ARqM9YBIVaPbm_TtGkRZlhxbRU=" onclick="openfullimg(this.src)">
-  </div>
-
-  <script>
-    var fullimgBox = document.getElementById("fullimgBox");
-    var fullimg = document.getElementById("fullimg");
-
-    function openfullimg(pic){
-      fullimgBox.style.display="flex";
-      fullimg.src= pic;
-    }
-
-    function closefullimg(){
-       fullimgBox.style.display="none";
-    }
-
+  
   </script>
 
 </body>
